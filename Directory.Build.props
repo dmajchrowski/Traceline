@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <!-- The one place the version is kept: the app, build\publish.ps1 and the installer read it. -->
+    <Version>1.3.6</Version>
+    <Authors>David Majchrowski</Authors>
+    <Copyright>Copyright (c) 2026 David Majchrowski</Copyright>
+    <Product>Traceline</Product>
+  </PropertyGroup>
+</Project>

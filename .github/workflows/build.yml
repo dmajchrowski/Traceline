@@ -1,0 +1,29 @@
+name: Build and test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.x
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - name: Build the web UI
+        working-directory: web
+        run: |
+          npm ci
+          npm run build
+      - name: Build
+        run: dotnet build Traceline.slnx -c Release
+      - name: Unit tests
+        run: dotnet test tests/Traceline.Core.Tests -c Release --no-build

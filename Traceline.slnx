@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Traceline.App/Traceline.App.csproj" />
+    <Project Path="src/Traceline.Core/Traceline.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Traceline.Core.Tests/Traceline.Core.Tests.csproj" />
+  </Folder>
+</Solution>
